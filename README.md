@@ -2,6 +2,19 @@
 
 This project provides a pipeline for training and evaluating a custom spaCy NER model, including spell correction and a Flask web app for entity extraction.
 
+## NER Data Preparation
+
+The script `Ner\generate_ner_data.py` can be used to generate Ner data from becn dataset
+```sh
+python Ner\generate_ner_data.py
+```
+
+The script `Ner\corpusCreator.py` can be used to create the corpus
+```sh
+python Ner\corpusCreator.py
+```
+
+
 ## Training and Evaluation Data Preparation
 
 The script `training/train_pipeline.py` can be used to convert your annotated CSV data into spaCy's DocBin format for training, development, and evaluation.
@@ -33,6 +46,7 @@ To generate all three files (train, dev, eval):
 python training/train_pipeline.py --csv output/spacy_training_data.csv --train training/train.spacy --dev training/dev.spacy --eval_csv output/spacy_test_data.csv --eval_out training/test.spacy
 ```
 
+
 ## Project Structure
 - `app/` - Flask web app, NER logic, spell correction
 - `training/` - Data processing and training pipeline
@@ -47,3 +61,12 @@ python training/train_pipeline.py --csv output/spacy_training_data.csv --train t
 
 ---
 Feel free to expand this README with more details about the web app, spell correction, or deployment as needed!
+
+
+### How to run
+-- Create a virtual Environment
+-- Activate Virtual Environment
+-- install requirements.txt
+-- add models folder to repo
+-- python app/main
+
